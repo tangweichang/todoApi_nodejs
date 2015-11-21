@@ -100,7 +100,7 @@ app.put('/todos/:id', function(req, res) {
         validAttributes.completed = body.completed;
         
     } else if (body.hasOwnProperty('completed')) {
-        return res.status(404).send();
+        return res.status(400).send();
            
     }
     
@@ -108,7 +108,7 @@ app.put('/todos/:id', function(req, res) {
         validAttributes.description = body.description;
         
     } else if (body.hasOwnProperty('description')) {
-        return res.status(404).send(); 
+        return res.status(400).send(); 
     }
     
     _.extend(matchedTodo, validAttributes);
